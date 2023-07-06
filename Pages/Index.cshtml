@@ -1,0 +1,16 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Scripting News";
+}
+
+@foreach (var item in Model.Items){
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">@item.title</h5>
+            <span>@item.pubdate</span>
+            <p class="card-text">@Html.Raw(item.description)</p>
+            <a href={@item.link} class="btn btn-primary">Link</a>
+        </div>
+    </div>
+}
