@@ -4,16 +4,16 @@
     ViewData["Title"] = "Scripting News";
 }
 
-<div>
-@foreach (var item in Model.Items)
-{
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">@item.title</h5>
-            <span>@item.pubdate</span>
-            <p class="card-text">@Html.Raw(item.description)</p>
-            <a href={@item.link} class="btn btn-primary">Link</a>
+<div class="d-flex flex-wrap">
+    @foreach (var item in Model.Items)
+    {
+        <div class="card text-bg-light m-3" style="width: 25rem;">
+            <div class="card-body">
+                <h5 class="card-title">@item.title</h5>
+                <p class="fw-light" style="color: #717070c9">@item.pubdate</p>
+                <p class="card-text">@Html.Raw(item.description)</p>
+                <a href={@item.link} class="btn btn-primary">Link</a>
+            </div>
         </div>
-    </div>
-}
+    }
 </div>
